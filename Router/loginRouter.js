@@ -2,6 +2,7 @@ const express = require('express');
 
 // internal export 
 const { getLogin } = require('../controller/loginController');
+const decorateHtmlResponse = require('../middlewares/common/decorateHtmlResponse');
 
 
 
@@ -9,6 +10,6 @@ const { getLogin } = require('../controller/loginController');
 const router = express.Router();
 
 
-router.get('/',getLogin);
+router.get('/',decorateHtmlResponse('Login'), getLogin);
 
 module.exports = router;
