@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "set NODE_ENV=development && nodemon app.js",
+    "prod": "set NODE_ENV=production && nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-validator": "^6.14.0",
     "http-errors": "^2.0.0",
