@@ -6,6 +6,7 @@ const path = require('path');
 
 // internal imports 
 const {notFoundHandler,errorHandler} = require('./middlewares/common/errorHandler');
+const loginRouter = require('./Router/loginRouter')
 
  
  const app = express();
@@ -29,6 +30,10 @@ app.use(express.static(path.join(__dirname,'public')))
 
  const port = process.env.PORT || 3000;
 
+//  route 
+app.use('/',loginRouter);
+// app.use('users',usersRouter);
+// app.use('inbox',inboxRouter);
 
 //404 not found handler
 app.use(notFoundHandler)
